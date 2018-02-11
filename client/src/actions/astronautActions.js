@@ -5,10 +5,12 @@ export function saveAstronaut(astronaut) {
   };
 }
 
-export function updateAstronautAttributes(newAttributes) {
+export function updateAstronautAttributes(newAttributes, shouldValidate, attrName) {
   return {
     type: "UPDATE_ASTRONAUT_ATTRIBUTES",
-    newAttributes
+    newAttributes,
+    ...shouldValidate,
+    ...attrName
   }
 }
 
@@ -30,5 +32,11 @@ export function astronautValidationError(errors) {
   return {
     type: "ASTRONAUT_VALIDATION_ERROR",
     errors
+  }
+}
+
+export function clearAstronaut() {
+  return {
+    type: "CLEAR_ASTRONAUT"
   }
 }

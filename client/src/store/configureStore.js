@@ -2,8 +2,8 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import rootReducer                             from '../reducers'
 import initialState                            from './initialState';
 import apiMiddleware                           from '../middleware/apiMiddleware';
-import astronautValidationMiddleware           from '../middleware/astronautValidationMiddleware';
-import ValidateAttributeUpdateMiddleware              from '../middleware/ValidateAttributeUpdateMiddleware';
+import formValidationMiddleware           from '../middleware/formValidationMiddleware';
+import ValidateAttributeUpdateMiddleware       from '../middleware/validateAttributeUpdateMiddleware';
 
 let composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -12,7 +12,7 @@ export default function configureStore() {
     rootReducer,
     initialState,
     composeEnhancers(applyMiddleware(
-      astronautValidationMiddleware,
+      formValidationMiddleware,
       ValidateAttributeUpdateMiddleware,
       apiMiddleware
     ))

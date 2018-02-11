@@ -1,11 +1,12 @@
 export default {
+  id: null,
   name: "",
-  date_of_birth: "",
-  terraform_experience: "",
-  terraform_planet: "",
+  email: "",
+  terraform_experience: false,
+  terraform_planets: "",
   errors: {
     name: null,
-    date_of_birth: null,
-    terraform_planet: null
+    email: null,
+    terraform_planets: null
   }
 }

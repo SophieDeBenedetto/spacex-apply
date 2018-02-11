@@ -5,7 +5,8 @@ const app      = express();
 
 const defaultErrors = {
   name: null,
-  date_of_birth: null,
+  email: null,
+  terraform_planets: null,
   terraform_experience: null
 };
 

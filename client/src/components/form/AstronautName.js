@@ -2,7 +2,10 @@ import React from 'react';
 
 class AstronautName extends React.Component {
   onChange = (e) => {
-    this.props.onAttributeUpdate({ name: e.target.value })
+    this.props.onAttributeUpdate(
+      { name: e.target.value },
+      { shouldValidate: true }
+    )
   };
 
   render() {
@@ -17,7 +20,7 @@ class AstronautName extends React.Component {
           id="name"
           onChange={this.onChange}
           value={name}/>
-          {nameError && <div className="invalid-feedback">please tell me your name.</div>}
+          {nameError && <div className="invalid-feedback invalid-name">please tell me your name.</div>}
       </div>
     )
   }

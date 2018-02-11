@@ -36,9 +36,9 @@ Form {
 }
 
 .submit {
-  margin-right: 15%;
+  margin-left: 15%;
+  margin-right: 5%;
 }
-
 .invalid {
   width: 100%;
   margin-top: 0.25rem;
@@ -47,15 +47,18 @@ Form {
   margin-right: 54%;
 }
 
-.invalid-feedback {
-  margin-right: 55%;
-}
-
 #terraform_experience {
   margin-top: 1%;
 }
 
 .invalid-planet {
-  margin-right: 53%;
+  margin-right: 35%;
 }
 
+.invalid-email {
+  margin-right: 50%;
+}
+
+.invalid-name {
+  margin-right: 55%;
+}
