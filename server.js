@@ -3,6 +3,12 @@ const fs       = require("fs");
 var bodyParser = require("body-parser");
 const app      = express();
 
+const defaultErrors = {
+  name: null,
+  date_of_birth: null,
+  terraform_experience: null
+};
+
 app.set("port", process.env.PORT || 3001);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -12,10 +18,12 @@ if(process.env.NODE_ENV==="production") {
 };
 
 app.post("/api/astronauts", (req, res) => {
-  const astronaut = req.body.astronaut;
+  let astronaut = req.body.astronaut;
   console.log("POST /api/astronauts");
   console.log("PARAMS:");
   console.log(astronaut);
+  astronaut.id = 1;
+  astronaut.errors = defaultErrors;
   res.json(astronaut);
 })
 

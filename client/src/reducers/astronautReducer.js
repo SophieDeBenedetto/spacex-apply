@@ -1,9 +1,12 @@
-import validateAstronaut from '../utils/validateAstronaut';
+import { validateAstronautAttribute,  } from '../utils/validateAstronaut';
+import { validateOnChange } from '../utils/validationFunctions';
 export default function astronautReducer(state={}, action) {
   switch(action.type) {
     case "UPDATE_ASTRONAUT_ATTRIBUTES":
-      const updatedAstronaut = {...state, ...action.newAttributes}
-      return {...updatedAstronaut, errors: validateAstronaut(updatedAstronaut)}
+      if (action.errors) {
+        return {...state, ...action.newAttributes, errors: action.errors}
+      }
+      return {...state, ...action.newAttributes}
     case "SAVE_ASTRONAUT_SUCCESS":
       return { ...state, ...action.astronaut};
     case "SAVE_ASTRONAUT_FAILURE":

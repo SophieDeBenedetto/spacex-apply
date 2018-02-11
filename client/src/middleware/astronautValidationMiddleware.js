@@ -1,6 +1,5 @@
-import { astronautValidationError } from '../actions/astronautActions';
-import validateAstronaut            from '../utils/validateAstronaut';
-import astronautValid               from '../utils/astronautValid';
+import { astronautValidationError }          from '../actions/astronautActions';
+import { validateAstronaut, astronautValid } from '../utils/validateAstronaut';
 
 const astronautValidationMiddleware = ({ dispatch, getState}) => next => action => {
   if (action.type !== "API") {

@@ -11,12 +11,13 @@ class AstronautName extends React.Component {
       <div className="form-group row">
         <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
         <input
+          required
           type="text"
           className={`col-sm-6 form-control ${nameError ? "is-invalid" : ""}`}
           id="name"
           onChange={this.onChange}
           value={name}/>
-          {nameError && <div className="invalid-feedback">Sorry, that username's taken. Try another?</div>}
+          {nameError && <div className="invalid-feedback">please tell me your name.</div>}
       </div>
     )
   }

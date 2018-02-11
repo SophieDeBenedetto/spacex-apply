@@ -31,4 +31,31 @@ header {
   margin-bottom: 5%
 }
 
+Form {
+  margin-left: 15%;
+}
+
+.submit {
+  margin-right: 15%;
+}
+
+.invalid {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #CC0000;
+  margin-right: 54%;
+}
+
+.invalid-feedback {
+  margin-right: 55%;
+}
+
+#terraform_experience {
+  margin-top: 1%;
+}
+
+.invalid-planet {
+  margin-right: 53%;
+}
 

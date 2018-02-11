@@ -6,8 +6,10 @@
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bootstrap": "^4.0.0",
+    "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
+    "react-datepicker": "^1.1.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.1.1",

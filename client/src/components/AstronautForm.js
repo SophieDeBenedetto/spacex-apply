@@ -4,8 +4,9 @@ import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as astronautActions  from "../actions/astronautActions";
 import AstronautName          from './form/AstronautName';
-// import AstronautHeight from './form/AstronautHeight';
-// import AstronautWeight from './form/AstronautWeight';
+import AstronautDateOfBirth   from './form/AstronautDateOfBirth';
+import TerraformExperience    from './form/TerraformExperience';
+import TerraformPlanet        from './form/TerraformPlanet';
 
 class AstronautForm extends React.Component {
   submitForm = (e) => {
@@ -18,15 +19,30 @@ class AstronautForm extends React.Component {
   };
 
   render() {
+    const { name, date_of_birth, errors, terraform_experience, terraform_planet } = this.props.astronaut;
     return (
       <Form onSubmit={this.submitForm}>
         <fieldset>
-        <AstronautName
-          name={this.props.astronaut.name}
-          nameError={this.props.astronaut.errors.name}
-          onAttributeUpdate={this.updateAstronautAttributes} />
+          <AstronautName
+            name={name}
+            nameError={errors.name}
+            onAttributeUpdate={this.updateAstronautAttributes} />
+          <AstronautDateOfBirth
+            dateOfBirth={date_of_birth}
+            dateOfBirthError={errors.date_of_birth}
+            onAttributeUpdate={this.updateAstronautAttributes} />
+          <TerraformExperience
+            terraformExperience={terraform_experience}
+            terraformExperienceError={errors.terraform_experience}
+            onAttributeUpdate={this.updateAstronautAttributes}/>
+          <TerraformPlanet
+            terraformPlanet={terraform_planet}
+            terraformError={errors.terraform_planet}
+            onAttributeUpdate={this.updateAstronautAttributes}/>
         </fieldset>
-        <Button type="submit">Submit</Button>
+        <fieldset className="form-group">
+          <Button className="btn btn-info submit" type="submit">Submit</Button>
+        </fieldset>
       </Form>
     )
   }
