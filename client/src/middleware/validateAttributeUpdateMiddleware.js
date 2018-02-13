@@ -4,18 +4,14 @@ const ValidateAttributeUpdateMiddleware = ({ dispatch, getState}) => next => act
   if (action.type !== "UPDATE_ASTRONAUT_ATTRIBUTES") {
     return next(action)
   }
-  const { newAttributes, shouldValidate } = action;
+  const { newAttributes } = action;
   const { astronaut }     = getState();
   let updatedAstronaut    = {...astronaut, ...newAttributes}
-  const attrName          = action.attrName || Object.keys(newAttributes)[0]
-  if (shouldValidate) {
-    action.errors = {
-      [attrName]: !astronautAttribueIsValid(updatedAstronaut, attrName)
-    }
-    next(action)
-  } else {
-    next(action)
+  const attrName          = Object.keys(newAttributes)[0]
+  action.errors = {
+    [attrName]: !astronautAttribueIsValid(updatedAstronaut, attrName)
   }
+  next(action)
 };
 
 export default ValidateAttributeUpdateMiddleware;

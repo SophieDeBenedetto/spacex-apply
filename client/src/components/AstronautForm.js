@@ -2,11 +2,12 @@ import React                  from 'react';
 import { Form, Button}        from 'react-bootstrap'
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as astronautActions  from "../actions/astronautActions";
+import * as astronautActions  from '../actions/astronautActions';
 import AstronautName          from './form/AstronautName';
 import AstronautEmail         from './form/AstronautEmail';
 import TerraformExperience    from './form/TerraformExperience';
 import TerraformPlanets       from './form/TerraformPlanets';
+import SuccessMessage         from './SuccessMessage';
 
 class AstronautForm extends React.Component {
   submitForm = (e) => {
@@ -14,12 +15,8 @@ class AstronautForm extends React.Component {
     this.props.actions.saveAstronaut(this.props.astronaut);
   };
 
-  updateAstronautAttributes = (newAttributes, shouldValidate, attrName) => {
-    this.props.actions.updateAstronautAttributes(
-      newAttributes,
-      shouldValidate,
-      attrName
-    )
+  updateAstronautAttributes = (newAttributes) => {
+    this.props.actions.updateAstronautAttributes(newAttributes)
   };
 
   clearForm = (e) => {
@@ -34,14 +31,7 @@ class AstronautForm extends React.Component {
     return (
       <div>
         {id &&
-          <div className="alert alert-dismissible alert-success">
-            <button type="button" className="close" onClick={this.clearForm}>&times;</button>
-            <p>
-              <strong>Thank you for your application!</strong>
-              <p>Lot's of really qualified SpaceEx members have applied.</p>
-              <p>We'll let you know if you're one of the lucky nerds when we finish reviewing applications in 3-6 years.</p>
-            </p>
-          </div>
+          <SuccessMessage closeForm={this.closeForm} />
         }
         <Form key="astronaut-form" onSubmit={this.submitForm}>
           <fieldset>

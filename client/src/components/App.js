@@ -10,7 +10,8 @@ class App extends Component {
         <header className="App-header">
           <img src={spaceship} className="App-logo" alt="logo" />
           <br />
-          <h1 className="App-title">SpaceEx Application</h1>
+          <h1 className="App-title">SpaceEx</h1>
+          <h3 className="App-subtitle">Apply to man the next trip to Mars!</h3>
         </header>
         <AstronautForm />
       </div>

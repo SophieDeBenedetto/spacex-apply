@@ -5,12 +5,10 @@ export function saveAstronaut(astronaut) {
   };
 }
 
-export function updateAstronautAttributes(newAttributes, shouldValidate, attrName) {
+export function updateAstronautAttributes(newAttributes) {
   return {
     type: "UPDATE_ASTRONAUT_ATTRIBUTES",
-    newAttributes,
-    ...shouldValidate,
-    ...attrName
+    newAttributes
   }
 }
 

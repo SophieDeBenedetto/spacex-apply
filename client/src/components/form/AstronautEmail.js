@@ -1,21 +1,27 @@
 import React from 'react';
 
 class AstronautEmail extends React.Component {
+  state = {
+    email: ""
+  };
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({email: nextProps.email})
+  }
+
   onBlur = (e) => {
     this.props.onAttributeUpdate(
-      { email: e.target.value },
-      {shouldValidate: true}
+      { email: this.state.email }
     )
   };
 
   onChange = (e) => {
-    this.props.onAttributeUpdate(
-      { email: e.target.value }
-    )
+    this.setState({email: e.target.value})
   }
 
   render() {
-    const { disabled, email, emailError } = this.props;
+    const { disabled, emailError } = this.props;
+    const { email } = this.state;
     return (
       <div className="form-group row">
         <label htmlFor="email" className="col-sm-2 col-form-label">SpaceEx Email</label>

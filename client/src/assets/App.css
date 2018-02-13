@@ -18,6 +18,11 @@
   font-size: 1.5em;
 }
 
+.App-subtitle {
+  font-size: 1.5em;
+  margin-top: 2%;
+}
+
 .App-intro {
   font-size: large;
 }
@@ -61,4 +66,10 @@ Form {
 
 .invalid-name {
   margin-right: 55%;
+}
+
+.alert-success {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2%;
 }

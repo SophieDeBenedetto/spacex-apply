@@ -1,8 +1,7 @@
 export const attributeValidators = {
   name: nameValid,
   email: emailValid,
-  terraform_planets: terraformPlanetValid,
-  terraform_experience: terraformPlanetValid
+  terraform_planets: terraformPlanetValid
 }
 
 function nameValid(astronaut){
