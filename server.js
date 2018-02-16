@@ -28,7 +28,6 @@ app.post("/api/astronauts", (req, res) => {
   res.json(astronaut);
 })
 
-
 app.listen(app.get("port"), () => {
   console.log(`Find the server at http://localhost:${app.get("port")}`)
 })
