@@ -4,6 +4,6 @@ export default function astronautAttributeIsValid(astronaut, attribute) {
   if (attributeValidators[attribute]) {
     return attributeValidators[attribute](astronaut);
   } else {
-    return false;
+    return true;
   }
 }
