@@ -6,7 +6,7 @@ import { Provider }          from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import './assets/index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../node_modules/bootstrap/dist/css/bootstrap-cyborg.css';
+import '../node_modules/bootswatch/dist/cyborg/bootstrap.css';
 
 const store = configureStore();
 
