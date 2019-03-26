@@ -1,11 +1,12 @@
 import { attributeValidators } from './attributeValidators';
 
 export default function astronautValidationErrors(astronaut) {
-  let collectedErrors
-  Object.keys(attributeValidators).reduce((errors, validator) => {
-    errors[validator] = !attributeValidators[validator](astronaut)
-    collectedErrors = errors
-    return errors
-  }, {})
-  return collectedErrors;
+  const validators = Object.keys(attributeValidators);
+  const errors = {};
+
+  for (const validator of validators) {
+    errors[validator] = !attributeValidators[validator](astronaut);
+  }
+
+  return errors;
 }
